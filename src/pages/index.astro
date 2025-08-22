@@ -6,10 +6,37 @@ import Layout from '../layouts/Layout.astro';
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1 class="fade-in"><span class="text-amber">PC</span>VIVIENTE</h1>
-      <p class="lead fade-in">Revivir, Reutilizar, Optimizar</p>
-      <p class="fade-in">Transformamos computadoras obsoletas en proyectos útiles para la inclusión digital</p>
-      <a href="#proyectos-destacados" class="btn btn-retro btn-lg mt-3">Explorar Proyectos</a>
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h1 class="fade-in"><span class="text-amber">PC</span>VIVIENTE</h1>
+          <p class="lead fade-in">Revivir, Reutilizar, Optimizar</p>
+          <p class="fade-in">Transformamos computadoras obsoletas en proyectos útiles para la inclusión digital</p>
+          <a href="#proyectos-destacados" class="btn btn-retro btn-lg mt-3">Explorar Proyectos</a>
+        </div>
+        <div class="col-lg-5">
+          <div class="retro-setup">
+            <div class="monitor">
+              <div class="screen">
+                <div class="terminal">
+                  <div class="terminal-header">C:\WINDOWS\system32\cmd.exe</div>
+                  <div class="terminal-body">
+                    <div>C:\><span class="cmd">pcviviente --init</span></div>
+                    <div class="output">Iniciando PCVIVIENTE v2.0...</div>
+                    <div class="success">✓ Hardware detectado: Pentium 4</div>
+                    <div class="success">🎮 PC revivida exitosamente!</div>
+                    <div>C:\><span class="cursor">█</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cpu">
+              <div class="power-btn"></div>
+              <div class="drive"></div>
+              <div class="drive"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -71,8 +98,8 @@ import Layout from '../layouts/Layout.astro';
   <!-- Últimas Noticias -->
   <section class="py-5">
     <div class="container">
-      <h3 class="text-center mb-4">Últimas Noticias</h3>
-      <div class="row g-4">
+      <h3 class="text-center mb-5">Últimas Noticias</h3>
+      <div class="row g-4 mb-5">
         <div class="col-md-6">
           <div class="card-vintage p-3">
             <small class="text-muted">15 Agosto 2025</small>
@@ -90,15 +117,147 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
-      <div class="text-center mt-4">
+      <div class="text-center">
         <a href="/noticias" class="btn btn-retro">Ver todas las noticias</a>
       </div>
     </div>
   </section>
 
+  <style>
+    .retro-setup {
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+      justify-content: center;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    .monitor {
+      background: linear-gradient(145deg, #e8e8e8, #c0c0c0);
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .screen {
+      width: 240px;
+      height: 160px;
+      background: #000;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .terminal {
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      height: 100%;
+    }
+
+    .terminal-header {
+      background: #1e1e1e;
+      color: #fff;
+      padding: 2px 6px;
+      font-size: 9px;
+    }
+
+    .terminal-body {
+      padding: 8px;
+    }
+
+    .terminal-body > div {
+      margin: 3px 0;
+    }
+
+    .cmd {
+      color: #fff;
+      animation: typing 2s steps(20) forwards;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+    }
+
+    .output {
+      color: #ccc;
+      margin-left: 20px;
+    }
+
+    .success {
+      color: #00ff00;
+      margin-left: 20px;
+    }
+
+    .cursor {
+      animation: blink 1s infinite;
+    }
+
+    .cpu {
+      width: 50px;
+      height: 120px;
+      background: linear-gradient(145deg, #f0f0f0, #d0d0d0);
+      border-radius: 3px;
+      padding: 8px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .power-btn {
+      width: 12px;
+      height: 12px;
+      background: #4CAF50;
+      border-radius: 50%;
+      margin-bottom: 8px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .drive {
+      height: 8px;
+      background: #333;
+      margin: 4px 0;
+      border-radius: 1px;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .retro-setup {
+        max-width: 280px;
+        gap: 10px;
+      }
+      
+      .screen {
+        width: 200px;
+        height: 130px;
+      }
+      
+      .terminal {
+        font-size: 10px;
+      }
+      
+      .cpu {
+        width: 40px;
+        height: 100px;
+      }
+    }
+  </style>
+
   <script>
-    // Animación on scroll
-    const observeElements = document.querySelectorAll('.card-vintage');
+    // Animación on scroll para las cards
+    const cards = document.querySelectorAll('.card-vintage');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -108,11 +267,11 @@ import Layout from '../layouts/Layout.astro';
       });
     });
     
-    observeElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'all 0.6s ease';
-      observer.observe(el);
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'all 0.6s ease';
+      observer.observe(card);
     });
   </script>
 </Layout>

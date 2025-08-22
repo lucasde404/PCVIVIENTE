@@ -18,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="card-vintage p-4">
-            <h2 class="text-amber mb-4">💝 Apoya el Proyecto</h2>
+            <h2 class="text-amber mb-4">👍 Apoya el Proyecto</h2>
             <p class="lead">PCVIVIENTE es un proyecto completamente gratuito y sin ánimo de lucro.</p>
             <p>Si nuestros tutoriales te han ayudado a darle nueva vida a tu hardware, considera invitarnos un café para mantener el proyecto en marcha.</p>
             
@@ -69,30 +69,24 @@ import Layout from '../layouts/Layout.astro';
         
         <div class="col-lg-6">
           <div class="card-vintage p-4 text-center">
-            <h4 class="text-amber">🙏 ¡Gracias a nuestros colaboradores!</h4>
-            <div class="row g-3 mt-3">
-              <div class="col-4">
-                <div class="bg-light p-2 rounded">
-                  <small>👤 Ana M.<br><span class="text-muted">5 cafés</span></small>
+            <!-- Imagen de café generada con CSS -->
+            <div class="coffee-cup mb-4">
+              <div class="cup">
+                <div class="steam">
+                  <div class="steam-line steam-1"></div>
+                  <div class="steam-line steam-2"></div>
+                  <div class="steam-line steam-3"></div>
                 </div>
+                <div class="cup-body"></div>
+                <div class="cup-handle"></div>
               </div>
-              <div class="col-4">
-                <div class="bg-light p-2 rounded">
-                  <small>👤 Carlos R.<br><span class="text-muted">3 cafés</span></small>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="bg-light p-2 rounded">
-                  <small>👤 María L.<br><span class="text-muted">8 cafés</span></small>
-                </div>
-              </div>
+              <div class="saucer"></div>
             </div>
-            <p class="small mt-3">
-              <strong>🎯 Meta mensual:</strong><br>
-              <div class="progress mb-2">
-                <div class="progress-bar bg-warning" style="width: 67%"></div>
-              </div>
-              $67 de $100 recaudados
+            
+            <h4 class="text-amber">☕ ¡Gracias por tu apoyo!</h4>
+            <p class="lead">Cada donación nos ayuda a mantener el proyecto vivo y crear más contenido educativo.</p>
+            <p class="small text-muted">
+              Tu contribución hace la diferencia en la comunidad de reciclaje informático.
             </p>
           </div>
         </div>
@@ -204,7 +198,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="card-vintage p-4">
-            <p class="lead">Comparte tus proyectos, haz preguntas y conecta con otros entusiastas del reciclaje informático.</p>
+            <p class="lead">Compartí tus proyectos, hacé preguntas y conectá con otros fanáticos del reciclaje informático.</p>
             <div class="row mt-4">
               <div class="col-md-3 col-6">
                 <a href="#" class="btn btn-outline-primary w-100 mb-2">📘 Facebook</a>
@@ -225,39 +219,112 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <style>
+    .coffee-cup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+    }
+
+    .cup {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .cup-body {
+      width: 60px;
+      height: 50px;
+      background: linear-gradient(to bottom, #8B4513 0%, #A0522D 50%, #8B4513 100%);
+      border-radius: 0 0 25px 25px;
+      border: 3px solid #654321;
+      position: relative;
+    }
+
+    .cup-body::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      height: 35px;
+      background: linear-gradient(to bottom, #D2691E 0%, #CD853F 50%, #A0522D 100%);
+      border-radius: 0 0 20px 20px;
+    }
+
+    .cup-handle {
+      width: 15px;
+      height: 25px;
+      border: 3px solid #654321;
+      border-left: none;
+      border-radius: 0 15px 15px 0;
+      margin-left: -3px;
+      margin-bottom: 8px;
+      background: transparent;
+    }
+
+    .saucer {
+      width: 80px;
+      height: 8px;
+      background: linear-gradient(to bottom, #DDD 0%, #BBB 100%);
+      border-radius: 40px;
+      border: 2px solid #999;
+      margin-top: 5px;
+    }
+
+    .steam {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .steam-line {
+      width: 2px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 1px;
+      position: absolute;
+      animation: steam 2s ease-in-out infinite;
+    }
+
+    .steam-1 {
+      left: -8px;
+      animation-delay: 0s;
+    }
+
+    .steam-2 {
+      left: 0px;
+      animation-delay: 0.5s;
+    }
+
+    .steam-3 {
+      left: 8px;
+      animation-delay: 1s;
+    }
+
+    @keyframes steam {
+      0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-10px) rotate(2deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-20px) rotate(-2deg);
+      }
+    }
+  </style>
+
   <script>
     function showDonationOptions() {
       const methods = document.getElementById('donationMethods');
       methods.style.display = methods.style.display === 'none' ? 'block' : 'none';
     }
-
-    // Animación de progreso
-    function animateProgress() {
-      const progressBar = document.querySelector('.progress-bar');
-      let width = 0;
-      const targetWidth = 67;
-      const increment = targetWidth / 50;
-      
-      const animation = setInterval(() => {
-        if (width >= targetWidth) {
-          clearInterval(animation);
-        } else {
-          width += increment;
-          progressBar.style.width = width + '%';
-        }
-      }, 50);
-    }
-
-    // Iniciar animación cuando se vea la sección
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateProgress();
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-
-    observer.observe(document.querySelector('.progress'));
   </script>
 </Layout>
