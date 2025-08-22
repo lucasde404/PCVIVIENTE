@@ -1,4 +1,4 @@
-# 🌱 PCVIVIENTE - Revivir, Reutilizar, Optimizar
+# 💾 PCVIVIENTE - Revivir, Reutilizar, Optimizar
 
 **Dominio:** [pcviviente.net.ar](http://pcviviente.net.ar)  
 Proyecto personal sobre **reciclaje y reutilización de PCs antiguas** para inclusión digital y cuidado ambiental.  
