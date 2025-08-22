@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Inicio" description="PCVIVIENTE - Transformamos computadoras obsoletas en proyectos útiles. Revivir, Reutilizar, Optimizar.">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="fade-in"><span class="text-amber">PC</span>VIVIENTE</h1>
+      <p class="lead fade-in">Revivir, Reutilizar, Optimizar</p>
+      <p class="fade-in">Transformamos computadoras obsoletas en proyectos útiles para la inclusión digital</p>
+      <a href="#proyectos-destacados" class="btn btn-retro btn-lg mt-3">Explorar Proyectos</a>
+    </div>
+  </section>
+
+  <!-- Proyectos Destacados -->
+  <section id="proyectos-destacados" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Proyectos Destacados</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card-vintage p-4 h-100">
+            <h4 class="text-amber">🎮 Consola Retro</h4>
+            <p>Convierte tu PC antigua en una consola de videojuegos clásicos con RetroPie y Batocera.</p>
+            <a href="/proyectos/consola-retro" class="btn btn-outline-dark">Ver Tutorial</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-vintage p-4 h-100">
+            <h4 class="text-amber">🖥️ Servidor Casero</h4>
+            <p>Transforma hardware obsoleto en un servidor doméstico para archivos, media y automatización.</p>
+            <a href="/proyectos/servidor-casero" class="btn btn-outline-dark">Ver Tutorial</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-vintage p-4 h-100">
+            <h4 class="text-amber">🐧 Linux Ligero</h4>
+            <p>Instala distribuciones Linux optimizadas para darle nueva vida a equipos de bajos recursos.</p>
+            <a href="/proyectos/linux-ligero" class="btn btn-outline-dark">Ver Tutorial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Misión -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h3>Nuestra Misión</h3>
+          <p class="lead">Demostrar que el hardware obsoleto aún tiene valor práctico y educativo, promoviendo la inclusión digital y el cuidado ambiental.</p>
+          <ul class="list-unstyled">
+            <li>♻️ <strong>Reciclaje inteligente</strong> de equipos informáticos</li>
+            <li>📚 <strong>Educación tecnológica</strong> accesible</li>
+            <li>🌱 <strong>Conciencia ambiental</strong> en la era digital</li>
+            <li>🤝 <strong>Comunidad colaborativa</strong> de makers</li>
+          </ul>
+          <a href="/acerca" class="btn btn-retro">Conoce más sobre nosotros</a>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="card-vintage p-4">
+            <h4 class="text-amber">💡 ¿Sabías que...?</h4>
+            <p>Una PC de 2010 puede funcionar perfectamente como servidor de archivos, centro multimedia o consola retro, evitando que termine en un vertedero.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Últimas Noticias -->
+  <section class="py-5">
+    <div class="container">
+      <h3 class="text-center mb-4">Últimas Noticias</h3>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card-vintage p-3">
+            <small class="text-muted">15 Agosto 2025</small>
+            <h5 class="mt-2">Nueva guía: Batocera en PC vintage</h5>
+            <p class="small">Aprende a instalar el sistema operativo especializado en emulación...</p>
+            <a href="/noticias/batocera-pc-vintage" class="btn btn-sm btn-outline-dark">Leer más</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-vintage p-3">
+            <small class="text-muted">10 Agosto 2025</small>
+            <h5 class="mt-2">Linux Mint vs Lubuntu: Comparativa</h5>
+            <p class="small">Analizamos cuál es mejor para equipos de bajos recursos...</p>
+            <a href="/noticias/mint-vs-lubuntu" class="btn btn-sm btn-outline-dark">Leer más</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="/noticias" class="btn btn-retro">Ver todas las noticias</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Animación on scroll
+    const observeElements = document.querySelectorAll('.card-vintage');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    });
+    
+    observeElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'all 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+</Layout>

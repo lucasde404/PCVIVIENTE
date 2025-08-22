@@ -1,0 +1,22 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  features: string[];
+  link: string;
+}
+const { icon, title, description, features, link } = Astro.props;
+---
+
+<div class="project-card h-100">
+  <div class="project-icon">{icon}</div>
+  <h4>{title}</h4>
+  <p>{description}</p>
+  <div class="project-features">
+    {features.map(f => <span class="feature-tag">{f}</span>)}
+  </div>
+  <a href={link} class="project-link">
+    Ver tutorial completo <i class="fas fa-arrow-right" aria-hidden="true"></i>
+  </a>
+</div>

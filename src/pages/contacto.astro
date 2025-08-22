@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contacto" description="Ponte en contacto con PCVIVIENTE para consultas, soporte técnico y colaboraciones.">
+  <!-- Hero -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h1 class="display-4 text-amber">Contactanos</h1>
+      <p class="lead">¿Tenés preguntas sobre reciclaje informático? ¡Estamos para ayudarte!</p>
+    </div>
+  </section>
+
+  <!-- Formulario y Info -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Formulario de Contacto -->
+        <div class="col-lg-8">
+          <div class="card-vintage p-4">
+            <h3 class="text-amber mb-4">📧 Envianos un Mensaje</h3>
+            <form id="contactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nombre" class="form-label">Nombre *</label>
+                  <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email *</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-12">
+                  <label for="asunto" class="form-label">Asunto</label>
+                  <select class="form-control" id="asunto">
+                    <option>Consulta general</option>
+                    <option>Soporte técnico</option>
+                    <option>Propuesta de colaboración</option>
+                    <option>Donación de equipos</option>
+                    <option>Sugerencia de tutorial</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="mensaje" class="form-label">Mensaje *</label>
+                  <textarea class="form-control" id="mensaje" rows="5" required 
+                    placeholder="Describir tu consulta, el hardware que tenés, o cómo podemos ayudarte..."></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="acepto" required>
+                    <label class="form-check-label" for="acepto">
+                      Acepto que mis datos sean utilizados para responder mi consulta
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-retro btn-lg">
+                    Enviar Mensaje 📤
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Información de Contacto -->
+        <div class="col-lg-4">
+          <div class="card-vintage p-4 h-100">
+            <h4 class="text-amber mb-4">📞 Información</h4>
+            
+            <div class="mb-4">
+              <h6>🌐 Web</h6>
+              <p class="lead">¿Necesitas ayuda personalizada con tu proyecto de reciclaje informático?</p>
+            <p>Ofrecemos sesiones de soporte remoto para guiarte paso a paso en la instalación de sistemas operativos ligeros, configuración de servidores caseros y optimización de hardware vintage.</p>
+            <div class="row mt-4">
+              <div class="col-md-4">
+                <h5>🐧 Linux Ligero</h5>
+                <p class="small">Instalación y configuración de distribuciones optimizadas</p>
+              </div>
+              <div class="col-md-4">
+                <h5>🎮 Consolas Retro</h5>
+                <p class="small">Setup completo de RetroPie, Batocera y emuladores</p>
+              </div>
+              <div class="col-md-4">
+                <h5>🖥️ Servidores</h5>
+                <p class="small">Configuración de servicios domésticos y NAS</p>
+              </div>
+            </div>
+            <a href="#contactForm" class="btn btn-retro mt-3">Solicitar Soporte</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Rápido -->
+  <section class="py-5">
+    <div class="container">
+      <h3 class="text-center text-amber mb-4">❓ Preguntas Frecuentes</h3>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card-vintage p-3">
+            <h6>¿Qué PCs pueden reciclarse?</h6>
+            <p class="small">Cualquier PC con al menos 2GB RAM y procesador de 2 núcleos puede tener una segunda vida como consola retro o servidor básico.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-vintage p-3">
+            <h6>¿Es gratis el soporte?</h6>
+            <p class="small">Las consultas básicas por email son gratuitas. El soporte remoto personalizado puede tener un costo simbólico.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-vintage p-3">
+            <h6>¿Aceptan donaciones de equipos?</h6>
+            <p class="small">¡Sí! Si tienes hardware que ya no uses, contáctanos. Podemos darle una nueva vida y documentar el proceso.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-vintage p-3">
+            <h6>¿Cuánto demora una respuesta?</h6>
+            <p class="small">Generalmente respondemos en 24-48 horas. Para soporte urgente, menciona "URGENTE" en el asunto.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="/cafe#faq" class="btn btn-outline-dark">Ver todas las FAQ</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Manejo del formulario
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Simulación de envío
+      const btn = e.target.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      
+      btn.innerHTML = 'Enviando... ⏳';
+      btn.disabled = true;
+      
+      setTimeout(() => {
+        btn.innerHTML = '¡Enviado! ✅';
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          e.target.reset();
+          
+          // Mostrar mensaje de confirmación
+          const alert = document.createElement('div');
+          alert.className = 'alert alert-success mt-3';
+          alert.innerHTML = '¡Gracias por tu mensaje! Te responderemos pronto.';
+          e.target.appendChild(alert);
+          
+          setTimeout(() => alert.remove(), 5000);
+        }, 2000);
+      }, 1500);
+    });
+
+    // Smooth scroll para anclas internas
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+  </section>

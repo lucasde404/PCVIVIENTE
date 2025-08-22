@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Café" description="Apoya el proyecto PCVIVIENTE con una donación y encuentra respuestas en nuestras preguntas frecuentes.">
+  <!-- Hero -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h1 class="display-4">☕ Espacio de Café</h1>
+      <p class="lead text-amber">Un lugar de descanso, apoyo y respuestas</p>
+      <p>Apoya nuestro proyecto o encuentra respuestas a tus dudas</p>
+    </div>
+  </section>
+
+  <!-- Donaciones -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="card-vintage p-4">
+            <h2 class="text-amber mb-4">💝 Apoya el Proyecto</h2>
+            <p class="lead">PCVIVIENTE es un proyecto completamente gratuito y sin ánimo de lucro.</p>
+            <p>Si nuestros tutoriales te han ayudado a darle nueva vida a tu hardware, considera invitarnos un café para mantener el proyecto en marcha.</p>
+            
+            <div class="mb-4">
+              <h5>💰 ¿En qué usamos las donaciones?</h5>
+              <ul class="small">
+                <li>🌐 Mantenimiento del servidor y dominio</li>
+                <li>⚡ Hardware para pruebas y nuevos tutoriales</li>
+                <li>📱 Herramientas de desarrollo y testing</li>
+                <li>📚 Creación de contenido educativo</li>
+              </ul>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-retro btn-lg" onclick="showDonationOptions()">
+                ☕ Invitar un Café ($3)
+              </button>
+              <button class="btn btn-outline-dark" onclick="showDonationOptions()">
+                🍰 Café + Torta ($5)
+              </button>
+              <button class="btn btn-outline-dark" onclick="showDonationOptions()">
+                🎁 Apoyo Generoso ($10+)
+              </button>
+            </div>
+
+            <div id="donationMethods" class="mt-4" style="display: none;">
+              <h6 class="text-amber">Métodos de Donación:</h6>
+              <div class="row g-2">
+                <div class="col-6">
+                  <button class="btn btn-outline-primary w-100 small">💳 MercadoPago</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-outline-success w-100 small">💰 Cafecito</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-outline-info w-100 small">🏦 Transferencia</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-outline-warning w-100 small">₿ Crypto</button>
+                </div>
+              </div>
+              <p class="small text-muted mt-2">
+                Todas las donaciones son voluntarias y nos ayudan a mantener el proyecto libre y accesible.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="card-vintage p-4 text-center">
+            <h4 class="text-amber">🙏 ¡Gracias a nuestros colaboradores!</h4>
+            <div class="row g-3 mt-3">
+              <div class="col-4">
+                <div class="bg-light p-2 rounded">
+                  <small>👤 Ana M.<br><span class="text-muted">5 cafés</span></small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="bg-light p-2 rounded">
+                  <small>👤 Carlos R.<br><span class="text-muted">3 cafés</span></small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="bg-light p-2 rounded">
+                  <small>👤 María L.<br><span class="text-muted">8 cafés</span></small>
+                </div>
+              </div>
+            </div>
+            <p class="small mt-3">
+              <strong>🎯 Meta mensual:</strong><br>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-warning" style="width: 67%"></div>
+              </div>
+              $67 de $100 recaudados
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-amber mb-5">❓ Preguntas Frecuentes</h2>
+      
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="accordion" id="faqHardware">
+            <h4 class="mb-3">🖥️ Hardware y Compatibilidad</h4>
+            
+            <div class="card-vintage mb-3">
+              <div class="p-3">
+                <h6 class="mb-2">¿Qué PCs sirven para reciclaje?</h6>
+                <p class="small mb-0">Cualquier PC con al menos 2GB RAM y procesador dual-core (desde 2008) puede convertirse en consola retro, servidor básico o estación Linux ligera.</p>
+              </div>
+            </div>
+
+            <div class="card-vintage mb-3">
+              <div class="p-3">
+                <h6 class="mb-2">¿Funcionan las PCs de 32 bits?</h6>
+                <p class="small mb-0">¡Sí! Tenemos tutoriales específicos para arquitecturas de 32 bits usando distribuciones como AntiX, Puppy Linux o sistemas retro.</p>
+              </div>
+            </div>
+
+            <div class="card-vintage mb-3">
+              <div class="p-3">
+                <h6 class="mb-2">¿Necesito conocimientos técnicos?</h6>
+                <p class="small mb-0">No necesariamente. Nuestros tutoriales van desde nivel principiante hasta avanzado, con explicaciones paso a paso.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="accordion" id="faqSoftware">
+            <h4 class="mb-3">💿 Software y Sistemas</h4>
+            
+            <div class="card-vintage mb-3">
+              <div class="p-3">
+                <h6 class="mb-2">¿Qué Linux es mejor para PCs viejas?</h6>
+                <p class="small mb-0">Recomendamos Lubuntu, Linux Mint XFCE, AntiX o Puppy Linux según los recursos disponibles. Cada uno tiene sus ventajas.</p>
+              </div>
+            </div>
+
+            <div class="card-vintage mb-3">
+              <div class="p-3">
+                <h6 class="mb-2">¿Puedo mantener Windows?</h6>
+                <p class="small mb-0">Sí, pero para hardware muy antiguo, Linux ofrece mejor rendimiento. Podemos ayudarte a configurar dual-boot.</p>
+              </div>
+            </div>
+
+            <div class="card-vintage mb-3">
+              <div class="p-3">
+                <h6 class="mb-2">¿Qué emuladores funcionan mejor?</h6>
+                <p class="small mb-0">Para consolas retro recomendamos RetroPie, Batocera o Lakka. Cada uno tiene diferentes enfoques y compatibilidades.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Expandido -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <h4 class="text-amber mb-4">🔧 Soporte y Servicios</h4>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="card-vintage p-3 h-100">
+                <h6>¿Se ofrece soporte remoto?</h6>
+                <p class="small">Sí, se puede coordinar sesiones con programas como TeamViewer.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-vintage p-3 h-100">
+                <h6>¿Cuánto cuesta el soporte?</h6>
+                <p class="small">Las consultas básicas son gratuitas. El soporte remoto personalizado tiene un costo simbólico para sostener el proyecto.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-vintage p-3 h-100">
+                <h6>¿Aceptan equipos donados?</h6>
+                <p class="small">¡Por supuesto! Si tenés hardware que ya no usés, se recicla y crea contenido educativo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enlaces rápidos -->
+      <div class="text-center mt-5">
+        <p class="mb-3"><strong>¿No encuentras tu respuesta?</strong></p>
+        <a href="/contacto" class="btn btn-retro me-2">Contactanos</a>
+        <a href="/proyectos" class="btn btn-outline-dark">Ver Tutoriales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comunidad -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h3 class="text-amber mb-4">🤝 Unite a la Comunidad</h3>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="card-vintage p-4">
+            <p class="lead">Comparte tus proyectos, haz preguntas y conecta con otros entusiastas del reciclaje informático.</p>
+            <div class="row mt-4">
+              <div class="col-md-3 col-6">
+                <a href="#" class="btn btn-outline-primary w-100 mb-2">📘 Facebook</a>
+              </div>
+              <div class="col-md-3 col-6">
+                <a href="#" class="btn btn-outline-info w-100 mb-2">🐦 Twitter</a>
+              </div>
+              <div class="col-md-3 col-6">
+                <a href="#" class="btn btn-outline-danger w-100 mb-2">📺 YouTube</a>
+              </div>
+              <div class="col-md-3 col-6">
+                <a href="#" class="btn btn-outline-dark w-100 mb-2">💻 GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showDonationOptions() {
+      const methods = document.getElementById('donationMethods');
+      methods.style.display = methods.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Animación de progreso
+    function animateProgress() {
+      const progressBar = document.querySelector('.progress-bar');
+      let width = 0;
+      const targetWidth = 67;
+      const increment = targetWidth / 50;
+      
+      const animation = setInterval(() => {
+        if (width >= targetWidth) {
+          clearInterval(animation);
+        } else {
+          width += increment;
+          progressBar.style.width = width + '%';
+        }
+      }, 50);
+    }
+
+    // Iniciar animación cuando se vea la sección
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateProgress();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(document.querySelector('.progress'));
+  </script>
+</Layout>

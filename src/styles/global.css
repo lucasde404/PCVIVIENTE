@@ -1,0 +1,146 @@
+/* Variables retro sepia */
+:root {
+  --retro-dark: #2c1810;
+  --retro-medium: #4a3220;
+  --retro-light: #8b6f47;
+  --amber: #d4af37;
+  --sepia-bg: #f5f0e8;
+  --sepia-text: #3e2723;
+}
+
+/* Base */
+body {
+  background: linear-gradient(135deg, var(--sepia-bg) 0%, #ede7d9 100%);
+  color: var(--sepia-text);
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+}
+
+/* Navegación retro */
+.bg-retro {
+  background: linear-gradient(45deg, var(--retro-dark), var(--retro-medium)) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.text-amber {
+  color: var(--amber) !important;
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--amber) !important;
+  transform: translateY(-2px);
+}
+
+/* Botones retro */
+.btn-retro {
+  background: linear-gradient(45deg, var(--amber), #b8941f);
+  border: 2px solid var(--retro-medium);
+  color: var(--retro-dark);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.btn-retro:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+  color: var(--retro-dark);
+}
+
+/* Tarjetas con efecto vintage */
+.card-vintage {
+  background: rgba(245, 240, 232, 0.9);
+  border: 2px solid var(--retro-light);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card-vintage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 49%, rgba(212,175,55,0.1) 50%, transparent 51%);
+  pointer-events: none;
+}
+
+.card-vintage:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, rgba(44,24,16,0.8), rgba(74,50,32,0.8)), 
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(212,175,55,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Formularios */
+.form-control {
+  border: 2px solid var(--retro-light);
+  border-radius: 8px;
+  background: rgba(245, 240, 232, 0.9);
+}
+
+.form-control:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Enlaces sociales */
+.social-icon {
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  transform: scale(1.2) rotate(5deg);
+  text-shadow: 0 0 10px var(--amber);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .hero p { font-size: 1.1rem; }
+  .navbar-brand { font-size: 1.2rem; }
+}

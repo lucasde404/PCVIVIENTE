@@ -1,0 +1,77 @@
+---
+// ✅ Importa el CSS aquí en el frontmatter
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "PCVIVIENTE - Revivir, Reutilizar, Optimizar computadoras antiguas" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} | PCVIVIENTE</title>
+  <meta name="description" content={description}>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ❌ ELIMINA esta línea: <link href="/src/styles/global.css" rel="stylesheet"> -->
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-retro sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">
+        <span class="text-amber">PC</span>VIVIENTE
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/acerca">Acerca de</a></li>
+          <li class="nav-item"><a class="nav-link" href="/proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/noticias">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="/cafe">Café</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <slot />
+  </main>
+  <footer class="bg-retro text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="text-amber">PCVIVIENTE</h5>
+          <p class="small">Revivir, Reutilizar, Optimizar</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="social-links">
+            <a href="#" class="text-light me-3 social-icon" title="Facebook">📘</a>
+            <a href="#" class="text-light me-3 social-icon" title="Twitter">🐦</a>
+            <a href="#" class="text-light me-3 social-icon" title="YouTube">📺</a>
+            <a href="#" class="text-light social-icon" title="GitHub">💻</a>
+          </div>
+          <p class="small mt-2">© 2025 pcviviente.net.ar</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scrolling para anclas
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
