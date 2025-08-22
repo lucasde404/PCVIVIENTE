@@ -33,7 +33,7 @@ Proyecto personal sobre **reciclaje y reutilización de PCs antiguas** para incl
 ## 🚀 Instalación
 
 ```bash
-git clone https://github.com/usuario/pcviviente.git
+git clone https://github.com/lucasde404/pcviviente.git
 cd pcviviente
 npm install
 npm run dev     # servidor de desarrollo
