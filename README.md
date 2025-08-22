@@ -1,62 +1,41 @@
-# Astro Starter Kit: Blog
+# 🌱 PCVIVIENTE - Revivir, Reutilizar, Optimizar
 
-```sh
-npm create astro@latest -- --template blog
-```
+**Dominio:** [pcviviente.net.ar](http://pcviviente.net.ar)  
+Proyecto personal sobre **reciclaje y reutilización de PCs antiguas** para inclusión digital y cuidado ambiental.  
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-Features:
+## 🎯 Objetivos
+- Dar nueva vida a hardware obsoleto.  
+- Publicar **tutoriales prácticos** (Linux ligero, consola retro, multimedia, servidor casero).  
+- Formar una comunidad activa en torno al **reciclaje informático**.  
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+---
 
-## 🚀 Project Structure
+## 📂 Secciones del sitio
+1. **Inicio** → Resumen y proyectos destacados.  
+2. **Acerca de** → Misión y antecedentes.  
+3. **Proyectos** → Tutoriales dinámicos (WordPress).  
+4. **Noticias** → Blog de actualizaciones (WordPress).  
+5. **Café** → FAQs y donaciones.  
+6. **Contacto** → Formulario y redes sociales.  
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+## 🛠️ Tecnologías
+- **Astro** (sitio estático).  
+- **HTML5, CSS3, JS**.  
+- **Bootstrap** (UI responsiva).  
+- **WordPress** (contenido dinámico).  
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🚀 Instalación
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+```bash
+git clone https://github.com/usuario/pcviviente.git
+cd pcviviente
+npm install
+npm run dev     # servidor de desarrollo
+npm run build   # generar versión estática
+npm run preview # vista previa de producción
